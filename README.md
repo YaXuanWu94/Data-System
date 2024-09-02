@@ -1,1 +1,14 @@
-# Data-System
+# Database-System
+Name: 吳亞璇  
+
+Lecturer: 蔡芸琤  
+
+Department and Grade: 健統所碩三  
+## Assignment
+## Fianl project
+
+
+
+
+
+
