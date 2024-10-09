@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actor List</title>
+</head>
+<body>
+    <h1>Actor List</h1>
+
+    <!-- Form to add a new post -->
+    <form action="/" method="POST">
+        <label for="actor_id">Actor id:</label>
+        <input type="number" id="actor_id" name="actor_id" required><br><br>
+        
+        <label for="first_name">First name:</label>
+        <input type="text" id="first_name" name="first_name" required><br><br>
+        
+        <label for="last_name">Last name:</label>
+        <input type="text" id="last_name" name="last_name" required><br><br>
+    
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Existing Actors</h2>
+    <!-- 顯示資料庫中的演員資料 -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Actor ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for actor in actor %}
+            <tr>
+                <td>{{ actor[0] }}</td>  <!-- 顯示 Actor ID -->
+                <td>{{ actor[1] }}</td>  <!-- 顯示 First Name -->
+                <td>{{ actor[2] }}</td>  <!-- 顯示 Last Name -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
