@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Database Overview</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Students</h1>
+
+    <!-- Display flashed messages for errors or notifications -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+
+    <form method="POST">
+        <table border="1">
+            <tr>
+                <th>Select</th>
+                <th>ID</th>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Action</th>
+            </tr>
+            {% for student in students %}
+            <tr>
+                <td><input type="checkbox" name="student_ids" value="{{ student.student_id }}"></td>
+                <td>{{ student.id }}</td>
+                <td><input type="text" name="student_id_{{ student.student_id }}" value="{{ student.student_id }}" required></td>
+                <td><input type="text" name="name_{{ student.student_id }}" value="{{ student.name }}" required></td> 
+                <td>
+                    <select name="gender_{{ student.student_id }}" required>
+                        <option value="Male" {% if student.gender == 'Male' %}selected{% endif %}>Male</option>
+                        <option value="Female" {% if student.gender == 'Female' %}selected{% endif %}>Female</option>
+                        <option value="Other" {% if student.gender == 'Other' %}selected{% endif %}>Other</option>
+                    </select>
+                </td>
+                <td>
+                    <button type="submit" formaction="/update/student/{{ student.student_id }}">Update</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <button type="submit" formaction="/delete/student">Delete Selected Students</button>
+    </form>
+
+    <h1>Classes</h1>
+    <form method="POST">
+        <table border="1">
+            <tr>
+                <th>Select</th>
+                <th>ID</th>
+                <th>Student ID</th>
+                <th>Class ID</th>
+                <th>Action</th>
+            </tr>
+            {% for cls in classes %}
+            <tr>
+                <td><input type="checkbox" name="class_ids" value="{{ cls.id }}"></td>
+                <td>{{ cls.id }}</td>
+                <td><input type="text" name="student_id_{{ cls.id }}" value="{{ cls.student_id }}" required></td>
+                <td><input type="text" name="class_id_{{ cls.id }}" value="{{ cls.class_id }}" required></td>
+                <td>
+                    <button type="submit" formaction="/update/class/{{ cls.id }}">Update</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <button type="submit" formaction="/delete/class">Delete Selected Classes</button>
+    </form>
+
+    <h1>Subjects</h1>
+    <form method="POST">
+        <table border="1">
+            <tr>
+                <th>Select</th>
+                <th>ID</th>
+                <th>Student ID</th>
+                <th>Favorite Subject</th>
+                <th>Action</th>
+            </tr>
+            {% for subject in subjects %}
+            <tr>
+                <td><input type="checkbox" name="subject_ids" value="{{ subject.id }}"></td>
+                <td>{{ subject.id }}</td>
+                <td><input type="text" name="student_id_{{ subject.id }}" value="{{ subject.student_id }}" required></td>
+                <td><input type="text" name="fav_subject_{{ subject.id }}" value="{{ subject.fav_subject }}" required></td>
+                <td>
+                    <button type="submit" formaction="/update/subject/{{ subject.id }}">Update</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <button type="submit" formaction="/delete/subject">Delete Selected Subjects</button>
+    </form>
+
+    <h1>Add New Student</h1>
+    <form action="/create/add_full_record" method="POST">
+        <label for="student_id">Student ID:</label>
+        <input type="text" id="student_id" name="student_id" required><br><br>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select><br><br>
+
+        <label for="class_id">Class ID:</label>
+        <input type="text" id="class_id" name="class_id" required><br><br>
+
+        <label for="fav_subject">Favorite Subject:</label>
+        <input type="text" id="fav_subject" name="fav_subject" required><br><br>
+
+        <button type="submit">Add Student</button>
+    </form>
+
+    <h2>View Joined Data</h2>
+    <form action="/join/" method="GET">
+        <button type="submit">Show Joined Result</button>
+    </form>
+
+</body>
+</html>
