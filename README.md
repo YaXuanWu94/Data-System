@@ -8,7 +8,7 @@ Department and Grade: 健統所碩三
 ### HW2
 * [Video](https://youtu.be/2rekMi1uWFU?si=lV_UkNQqcirsiwPG) 
 * [Code](https://github.com/YaXuanWu94/Database-System/tree/main/hw2)
-* [ER diagram](hw2/Entity Relationship Diagram.png)
+* [ER diagram](https://github.com/YaXuanWu94/Database-System/blob/main/hw2/Entity%20Relationship%20Diagram.png)
 
 ## Fianl project
 
