@@ -1,6 +1,6 @@
 # Database-System
 Name: 吳亞璇  
-Department and Grade: 健統所碩三  
+Department and Grade: 健統所碩二  
 ## Assignment
 ### HW1
 * [Video](https://youtu.be/7SMTzP11Oko) 
