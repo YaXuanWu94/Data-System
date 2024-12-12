@@ -1,0 +1,29 @@
+<!-- templates/update.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card mx-auto" style="max-width: 500px;">
+    <div class="card-body">
+        <h2 class="card-title text-center">Update Submission</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="school" class="form-label">School</label>
+                <input type="text" class="form-control" id="school" name="school" value="{{ submission.school }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ submission.name }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="student_id" class="form-label">Student ID</label>
+                <input type="text" class="form-control" id="student_id" name="student_id" value="{{ submission.student_id }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="file" class="form-label">Replace File (Optional)</label>
+                <input type="file" class="form-control" id="file" name="file">
+            </div>
+            <button type="submit" class="btn btn-warning w-100">Update Submission</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
