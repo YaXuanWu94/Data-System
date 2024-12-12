@@ -14,7 +14,7 @@ Department and Grade: 健統所碩二
 * [Code](hw3)
 ### HW4
 * [Video](https://youtu.be/G94wN_20jkY)
-* [Code](hw3)
+* [Code](https://github.com/YaXuanWu94/Database-System/tree/main/hw4)
 
 
 
