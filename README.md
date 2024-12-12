@@ -12,6 +12,10 @@ Department and Grade: 健統所碩二
 ### HW3
 * [Video](https://youtu.be/cVabZbEQ0W0)
 * [Code](hw3)
+### HW4
+* [Video](https://youtu.be/G94wN_20jkY)
+* [Code](hw3)
+
 
 
 ## Fianl project
