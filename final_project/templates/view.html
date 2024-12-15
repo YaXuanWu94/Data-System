@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Record</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="background-container">
+        <div class="container mt-4">
+            <h1 class="text-center mb-4">View Record</h1>
+
+            <div class="card p-4">
+                <h3>{{ record.name }}</h3>
+                <p><strong>Date:</strong> {{ record.date.strftime('%Y-%m-%d') }}</p>
+                <p><strong>Location:</strong> {{ record.location }}</p>
+                <p><strong>Notes:</strong> {{ record.notes }}</p>
+
+                <h4>Photos:</h4>
+                <div class="d-flex flex-wrap">
+                    {% for photo in photos %}
+                    <div class="m-2">
+                        <img src="data:image/jpeg;base64,{{ photo | b64encode }}" alt="Photo" class="img-thumbnail">
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="mt-4">
+                    <a href="/" class="btn btn-secondary">Back to Records</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

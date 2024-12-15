@@ -1,0 +1,69 @@
+/* static/styles.css */
+body {
+    background-image: url('/static/img.png');
+    background-size: cover;
+    background-position: center 10%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 60px;
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+button, .btn {
+    background-color: rgb(49, 46, 46);
+    color: white;
+    border: none;
+    padding: 6px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover, .btn:hover {
+    background-color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #eee;
+    font-weight: bold;
+}
+
+.custom-file-upload {
+    background-color: #333;
+    color: white;
+    padding: 6px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
